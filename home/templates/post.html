@@ -1,0 +1,19 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block content %}
+<!-- Post preview-->
+<div class="post-preview">
+    {% for x in bpost %}
+    <a href="post/{{x.post_id}}"><h2 class="post-title">{{x.title}}</h2></a>
+    <img class="card-img-top" src="{{x.image.url}}" alt="..." width="350" height="350">
+    <p>{{x.subtitle}}</p>
+    <p class="post-meta">
+        Posted by
+        <a href="#!">{{x.author_name}}</a><br>
+        {{x.user_type}}<br>
+        {{x.post_date}}
+    </p><hr class="my-4" />
+
+    {% endfor %}
+</div>
+{% endblock %}
